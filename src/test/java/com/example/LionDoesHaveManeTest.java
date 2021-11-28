@@ -20,7 +20,7 @@ public class LionDoesHaveManeTest {
     }
 
     @Mock
-    Feline filine;
+    Feline feline;
 
 
     @Parameterized.Parameters
@@ -34,7 +34,7 @@ public class LionDoesHaveManeTest {
 
     @Test
     public void doesHaveManeLionTest() throws Exception{
-        Lion lion = new Lion(animalSex,filine);
+        Lion lion = new Lion(animalSex,feline);
         boolean actual = lion.doesHaveMane();
         assertEquals(expected, actual);
 
@@ -43,7 +43,7 @@ public class LionDoesHaveManeTest {
     @Test
     public void doesHaveManeLionExceptionTest() throws Exception{
         try {
-            Lion lion = new Lion("Не определившийся",filine);
+            Lion lion = new Lion("Не определившийся",feline);
             lion.doesHaveMane();
         } catch (Exception e) {
         assertTrue(e.getMessage().equals("Используйте допустимые значения пола животного - самец или самка"));

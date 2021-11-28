@@ -15,11 +15,11 @@ import static org.junit.Assert.assertEquals;
 public class CatTest {
 
     @Mock
-    Feline filine;
+    Feline feline;
 
     @Test
     public void getSoundCatTest() {
-        Cat cat = new Cat(filine);
+        Cat cat = new Cat(feline);
         String expected = "Мяу";
         String actual = cat.getSound();
         assertEquals(expected, actual);
@@ -27,8 +27,8 @@ public class CatTest {
 
     @Test
     public void getFoodCatTest() throws Exception{
-        Cat cat = new Cat(filine);
-        Mockito.when(filine.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        Cat cat = new Cat(feline);
+        Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> expected = List.of("Животные", "Птицы", "Рыба");
         List<String> actual = cat.getFood();
         assertEquals(expected, actual);
